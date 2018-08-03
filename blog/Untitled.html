@@ -6,6 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -74,6 +78,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Supreme" type="application/atom+xml" />
+
 
 
 
@@ -82,26 +88,26 @@
 <meta name="description" content="1.Netfilter/Iptables通常我们所说的 Linux 防火墙是指 Linux 内核集成的 IP 信息包过滤系统—— Netfilter/iptables 。   Netfilter：主要是由内核模块来实现，工作在内核空间，是 Linux 核心中的一个通用架构。在这个框架上实现包过滤、NAT（网络地址转换）等模块功能，采用这样的模块化设计，使其拥有更好的扩展性和较强的灵活性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iptables">
-<meta property="og:url" content="http://yoursite.com/2018/03/25/now/index.html">
+<meta property="og:url" content="http://zhoul.cc/blog/Untitled.html">
 <meta property="og:site_name" content="Supreme">
 <meta property="og:description" content="1.Netfilter/Iptables通常我们所说的 Linux 防火墙是指 Linux 内核集成的 IP 信息包过滤系统—— Netfilter/iptables 。   Netfilter：主要是由内核模块来实现，工作在内核空间，是 Linux 核心中的一个通用架构。在这个框架上实现包过滤、NAT（网络地址转换）等模块功能，采用这样的模块化设计，使其拥有更好的扩展性和较强的灵活性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/1135081470275678415-wm.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/1135081470275751536-wm.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/wm.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/wmk.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/wml.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/wmo.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/QQ图片20180720145731.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/QQ图片20180720145753.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/zl.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/QQ图片20180720161646.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/25/now/images/zli.png">
-<meta property="og:updated_time" content="2018-08-03T09:36:52.398Z">
+<meta property="og:image" content="http://zhoul.cc/images/1135081470275678415-wm.png">
+<meta property="og:image" content="http://zhoul.cc/images/1135081470275751536-wm.png">
+<meta property="og:image" content="http://zhoul.cc/images/wm.png">
+<meta property="og:image" content="http://zhoul.cc/images/wmk.png">
+<meta property="og:image" content="http://zhoul.cc/images/wml.png">
+<meta property="og:image" content="http://zhoul.cc/images/wmo.png">
+<meta property="og:image" content="http://zhoul.cc/images/QQ图片20180720145731.png">
+<meta property="og:image" content="http://zhoul.cc/images/QQ图片20180720145753.png">
+<meta property="og:image" content="http://zhoul.cc/images/zl.png">
+<meta property="og:image" content="http://zhoul.cc/images/QQ图片20180720161646.png">
+<meta property="og:image" content="http://zhoul.cc/images/zli.png">
+<meta property="og:updated_time" content="2018-07-20T12:11:32.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables">
 <meta name="twitter:description" content="1.Netfilter/Iptables通常我们所说的 Linux 防火墙是指 Linux 内核集成的 IP 信息包过滤系统—— Netfilter/iptables 。   Netfilter：主要是由内核模块来实现，工作在内核空间，是 Linux 核心中的一个通用架构。在这个框架上实现包过滤、NAT（网络地址转换）等模块功能，采用这样的模块化设计，使其拥有更好的扩展性和较强的灵活性。">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/25/now/images/1135081470275678415-wm.png">
+<meta name="twitter:image" content="http://zhoul.cc/images/1135081470275678415-wm.png">
 
 
 
@@ -131,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/25/now/"/>
+  <link rel="canonical" href="http://zhoul.cc/blog/Untitled.html"/>
 
 
 
@@ -143,16 +149,6 @@
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?eb3bd253f125aef99714fca690ab3621";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -212,16 +208,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -233,9 +219,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -264,12 +284,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/now/">
+    <link itemprop="mainEntityOfPage" href="http://zhoul.cc/blog/Untitled.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="周琳">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/sun.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -293,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T20:22:06+08:00">
-                2018-03-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T14:20:07+08:00">
+                2018-07-20
               </time>
             
 
@@ -313,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/25/now/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/25/now/" itemprop="commentsCount"></span>
+                <a href="/blog/Untitled.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="/blog/Untitled.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -355,14 +375,14 @@
 </ul>
 </blockquote>
 <p>如图所示：</p>
-<p> <img src="/2018/03/25/now/images/1135081470275678415-wm.png" alt="“图片描述”"></p>
+<p> <img src="/images/1135081470275678415-wm.png" alt="“图片描述”"></p>
 <h2 id="2-iptables-的基础知识"><a href="#2-iptables-的基础知识" class="headerlink" title="2 iptables 的基础知识"></a>2 iptables 的基础知识</h2><h3 id="2-1-结构图"><a href="#2-1-结构图" class="headerlink" title="2.1 结构图"></a>2.1 结构图</h3><blockquote>
 <p>Netfilter 所设置的规则是存放在内核中的，而 iptables 通过 Netfilter 放出的内核接口对存放在内核中的 Netfilter 配置表进行修改。</p>
 </blockquote>
 <blockquote>
 <p>我们知道 iptables 是由一系列的表（tables）、每个表中有若干链（chain）以及每条链中由一条或多条规则（rule）组成的，最常用到的就是三表五链。</p>
 </blockquote>
-<p> <img src="/2018/03/25/now/images/1135081470275751536-wm.png" alt="“图片描述”"></p>
+<p> <img src="/images/1135081470275751536-wm.png" alt="“图片描述”"></p>
 <p>iptables 的结构主要是由 tables、chain 和 target 组成。</p>
 <h4 id="2-1-1-tables"><a href="#2-1-1-tables" class="headerlink" title="2.1.1 tables"></a>2.1.1 tables</h4><table>
 <thead>
@@ -499,12 +519,12 @@
 </blockquote>
 <p>工作原理</p>
 <p>Nat 的初始化工作和 filter 基本一样。Nat 的 ipv4 部分在 Iptables_nat.c 、Core 部分在 nf_nat_core.c，不同的就是表不一样。<br>先看一下 IP 包的结构，如下图：</p>
-<p><img src="/2018/03/25/now/images/wm.png" alt="“图片描述”"></p>
+<p><img src="/images/wm.png" alt="“图片描述”"></p>
 <blockquote>
 <p>在 IP 数据包中，都会有源地址（Source ip address）和目的地址（Destination ip address）两个字段，数据包经过的路由器就是根据这两个字段来判定数据包由什么地方发过来，该发往何处。</p>
 </blockquote>
 <p>iptables 中的 DNAT 和 SNAT 的原理和这个类似，下图是可靠数据包在 iptables 中经过的链（chains）：</p>
-<p><img src="/2018/03/25/now/images/wmk.png" alt="“图片描述”"></p>
+<p><img src="/images/wmk.png" alt="“图片描述”"></p>
 <blockquote>
 <p>如图所示，图中的菱形部分就是对数据包进行判定转发的地方。如果目的地址是本机地址，数据被转交给 INPUT 链，反之转交给 FORWARD 链。</p>
 </blockquote>
@@ -602,8 +622,8 @@
 <p>iptables命令选项输入顺序：</p>
 <p>iptables -t 表名 &lt;-A/I/D/R&gt; 规则链名 [规则号] &lt;-i/o 网卡名&gt; -p 协议名 &lt;-s 源IP/源子网&gt; –sport 源端口 &lt;-d 目标IP/目标子网&gt; –dport 目标端口 -j 动作</p>
 <h2 id="4-iptables-的运用"><a href="#4-iptables-的运用" class="headerlink" title="4 iptables 的运用"></a>4 iptables 的运用</h2><h4 id="4-1-查看当前-iptables-的规则"><a href="#4-1-查看当前-iptables-的规则" class="headerlink" title="4.1 查看当前 iptables 的规则"></a>4.1 查看当前 iptables 的规则</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo iptables -nL</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/03/25/now/images/wml.png" alt="“图片描述”"><br>因为该环境下还未设置 iptables 的规则，所以看到的是一个空的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo iptables -nvL --line</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/25/now/images/wmo.png" alt="“图片描述”"></p>
+<p><img src="/images/wml.png" alt="“图片描述”"><br>因为该环境下还未设置 iptables 的规则，所以看到的是一个空的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo iptables -nvL --line</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/wmo.png" alt="“图片描述”"></p>
 <blockquote>
 <ul>
 <li>第一列： num 显示了该规则在该链中的顺序位置</li>
@@ -626,19 +646,19 @@
 <h4 id="4-3-实例二"><a href="#4-3-实例二" class="headerlink" title="4.3 实例二"></a>4.3 实例二</h4><p>下面这个例子是将所有访问 80 端口的数据包都丢掉。</p>
 <p>实验准备</p>
 <p>验证 80 端口的开放性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -lunpt | grep 80</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/25/now/images/QQ图片20180720145731.png" alt="“图片描述”"></p>
+<p><img src="/images/QQ图片20180720145731.png" alt="“图片描述”"></p>
 <p>可以看到 80 端口已经开放。</p>
 <p>尝试查看能否访问该页面，若返回值为 200 则为成功访问，说明80 端口是可以连接的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I localhost</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/25/now/images/QQ图片20180720145753.png" alt="“图片描述”"><br>添加规则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将所有访问 80 端口的数据包都丢掉</span><br><span class="line">sudo iptables -t filter -I INPUT -p tcp --dport 80 -j DROP</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/QQ图片20180720145753.png" alt="“图片描述”"><br>添加规则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将所有访问 80 端口的数据包都丢掉</span><br><span class="line">sudo iptables -t filter -I INPUT -p tcp --dport 80 -j DROP</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只是查看 INPUT 链是否加入了这条规则</span></span><br><span class="line">sudo iptables -nvL INPUT</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 再来尝试，能否查看到输出信息</span></span><br><span class="line">curl localhost</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/03/25/now/images/zl.png" alt="“图片描述”"></p>
+<p><img src="/images/zl.png" alt="“图片描述”"></p>
 <p>从截图可以看到没返回，这是因为 DROP 将所有来访问该页面的数据包丢掉，不给任何返回和响应，而 curl 一直等待着服务端的响应。</p>
 <p>若将 DROP 行为改成 REJECT 的话，就会有返回信息说这个端口无法访问。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除之前添加的规则，这里没有添加 `-t` 的参数</span></span><br><span class="line"><span class="comment"># 是因为不指明该参数，系统默认为修改指向 filter 表</span></span><br><span class="line">sudo iptables -D INPUT -p tcp --dport 80 -j DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以使用行号删除</span></span><br><span class="line">sudo iptables -nL --line</span><br><span class="line">sudo iptables -D INPUT 1</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加拒绝的规则</span></span><br><span class="line">sudo iptables -I INPUT -p tcp --dport 80 -j REJECT</span><br><span class="line"></span><br><span class="line"><span class="comment">#再次验证</span></span><br><span class="line">curl -I localhost</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/25/now/images/QQ图片20180720161646.png" alt="“图片描述”"><br>通过上面的例子可以看到 iptables 已经修改就会立即生效。</p>
+<p><img src="/images/QQ图片20180720161646.png" alt="“图片描述”"><br>通过上面的例子可以看到 iptables 已经修改就会立即生效。</p>
 <p>还可以通过另一种方式来查看已经生效的规则，这种方式查看的是直接插入的规则：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo iptables-save</span><br></pre></td></tr></table></figure></p>
 <p>当然 iptables-save 有一个参数 -t 可以指定要保存的表，使用重定向可以将输出保存到某个文件中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在执行该命令之前请先用sudo su 切换到 root 用户</span></span><br><span class="line"></span><br><span class="line">sudo iptables-save -t filter &gt; filter.bak</span><br><span class="line"></span><br><span class="line">cat filter.bak</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/25/now/images/zli.png" alt="“图片描述”"><br>另外，还有一个 iptables-restore 命令可以将保存到文件中的规则重新恢复到系统中。</p>
+<p><img src="/images/zli.png" alt="“图片描述”"><br>另外，还有一个 iptables-restore 命令可以将保存到文件中的规则重新恢复到系统中。</p>
 <h4 id="4-4-实例三"><a href="#4-4-实例三" class="headerlink" title="4.4 实例三"></a>4.4 实例三</h4><p>端口转发，将发往80端口的请求转发到9200端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iptables -t nat -A PREROUTING -d 192.168.5.141 -p tcp --dport 80 -j REDIRECT --to-ports 9200</span></span><br><span class="line"></span><br><span class="line">此规则只对外部访问有效，如果是内部访问localhost则无效，因为loopback不走PREROUTING，需要定义OUPUT规则下的转发：</span><br><span class="line">iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 9200</span><br></pre></td></tr></table></figure></p>
 
       
@@ -652,6 +672,24 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    周琳
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhoul.cc/blog/Untitled.html" title="iptables">http://zhoul.cc/blog/Untitled.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
@@ -664,8 +702,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/plan/" rel="next" title="svn">
-                <i class="fa fa-chevron-left"></i> svn
+              <a href="/blog/hello-world.html" rel="next" title="SVN">
+                <i class="fa fa-chevron-left"></i> SVN
               </a>
             
           </div>
@@ -674,8 +712,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/20/kali/" rel="prev" title="lambda表达式">
-                lambda表达式 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/lamba函数.html" rel="prev" title="lamba表达式">
+                lamba表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -747,10 +785,6 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/sun.jpg"
-                alt="周琳" />
-            
               <p class="site-author-name" itemprop="name">周琳</p>
               <p class="site-description motion-element" itemprop="description">我们有梦想，所以很抽象</p>
           </div>
@@ -775,23 +809,14 @@
           </nav>
 
           
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/zhoulhb" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/zhoulin0127" target="_blank" title="微博">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>微博</a>
-                  </span>
-                
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
+          
+
           
 
           
@@ -900,10 +925,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -945,12 +969,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -995,7 +1014,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 102244, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 102244, xid: "2018/03/25/now/"});
+		_hcwp.push({widget:"Stream", widget_id: 102244, xid: "/blog/Untitled.html"});
 		
 
 		(function() {
@@ -1027,6 +1046,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

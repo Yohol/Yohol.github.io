@@ -6,6 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -74,6 +78,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Supreme" type="application/atom+xml" />
+
 
 
 
@@ -81,20 +87,20 @@
 
 <meta name="description" content="一.日常使用手册 1.创建svn项目1# svnadmin create /data/svn/newproject        --svn项目：newproject 2.创建用户1# htpasswd /data/svnauth/passwd newuser       --用户：newuser 3.配置仓库权限1234567891011# vim /data/svnauth/authz[gro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="svn">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/plan/index.html">
+<meta property="og:title" content="SVN">
+<meta property="og:url" content="http://zhoul.cc/blog/hello-world.html">
 <meta property="og:site_name" content="Supreme">
 <meta property="og:description" content="一.日常使用手册 1.创建svn项目1# svnadmin create /data/svn/newproject        --svn项目：newproject 2.创建用户1# htpasswd /data/svnauth/passwd newuser       --用户：newuser 3.配置仓库权限1234567891011# vim /data/svnauth/authz[gro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/03/09/plan/images/1531724442366.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/03/09/plan/images/1531725835361.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/03/09/plan/images/1531726817825.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/03/09/plan/images/1531726675853.jpg">
-<meta property="og:updated_time" content="2018-08-03T09:36:27.540Z">
+<meta property="og:image" content="http://zhoul.cc/images/1531724442366.jpg">
+<meta property="og:image" content="http://zhoul.cc/images/1531725835361.jpg">
+<meta property="og:image" content="http://zhoul.cc/images/1531726817825.jpg">
+<meta property="og:image" content="http://zhoul.cc/images/1531726675853.jpg">
+<meta property="og:updated_time" content="2018-07-18T10:47:45.214Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="svn">
+<meta name="twitter:title" content="SVN">
 <meta name="twitter:description" content="一.日常使用手册 1.创建svn项目1# svnadmin create /data/svn/newproject        --svn项目：newproject 2.创建用户1# htpasswd /data/svnauth/passwd newuser       --用户：newuser 3.配置仓库权限1234567891011# vim /data/svnauth/authz[gro">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/09/plan/images/1531724442366.jpg">
+<meta name="twitter:image" content="http://zhoul.cc/images/1531724442366.jpg">
 
 
 
@@ -124,28 +130,18 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/plan/"/>
+  <link rel="canonical" href="http://zhoul.cc/blog/hello-world.html"/>
 
 
 
 
 
-  <title>svn | Supreme</title>
+  <title>SVN | Supreme</title>
   
 
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?eb3bd253f125aef99714fca690ab3621";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -205,16 +201,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -226,9 +212,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -257,12 +277,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/plan/">
+    <link itemprop="mainEntityOfPage" href="http://zhoul.cc/blog/hello-world.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="周琳">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/sun.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -274,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">svn</h1>
+          <h1 class="post-title" itemprop="name headline">SVN</h1>
         
 
         <div class="post-meta">
@@ -286,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T22:51:28+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T18:16:00+08:00">
+                2018-07-18
               </time>
             
 
@@ -306,8 +326,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/09/plan/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/09/plan/" itemprop="commentsCount"></span>
+                <a href="/blog/hello-world.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="/blog/hello-world.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -356,10 +376,10 @@
 <p>svn仓库权限，可以进行单独配置，也可以进行统一配置。考虑实际情况，一般会有多个svn仓库，这里采用统一配置。</p>
 <p>创建用于管理所有仓库帐号密码、权限控制等的目录svnauth<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir -p /data/svnauth/</span></span><br></pre></td></tr></table></figure></p>
 <p>创建svn仓库权限的总控制文件svnserve.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /data/svnauth/svnserve.conf</span></span><br><span class="line">[general]</span><br><span class="line"><span class="comment">#未鉴定的用户无权限访问该版本库</span></span><br><span class="line">anon-access = none</span><br><span class="line"></span><br><span class="line"><span class="comment">#鉴定后的可读写版本库</span></span><br><span class="line">auth-access = write</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用的密码文件是同级路径的passwd文件，即是/data/svnaut/passwd</span></span><br><span class="line">password-db = passwd</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用的权限控制文件是同级路径的authz文件，即是/data/svndauth/authz</span></span><br><span class="line">authz-db = authz</span><br><span class="line"></span><br><span class="line"><span class="comment">#realm指定版本库的认证域，即在登录时提示的认证域名称。各个仓库的认证域都可以自定义</span></span><br><span class="line">realm = svnauth</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/09/plan/images/1531724442366.jpg" alt="“图片描述”"></p>
+<p><img src="/images/1531724442366.jpg" alt="“图片描述”"></p>
 <p>创建passwd文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># touch /data/svnauth/passwd</span></span><br></pre></td></tr></table></figure></p>
 <p>创建authz文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /data/svndata/authz</span></span><br><span class="line">[groups]             //用户组配置</span><br><span class="line">develop = test1,test2,testzl           //定义develop用户组成员test1,test2,testzl</span><br><span class="line">android = test3</span><br><span class="line">admin = zhouladmin</span><br><span class="line">dgg = dg</span><br><span class="line"></span><br><span class="line">[devroot:/]                     //仓库权限配置，仓库名：devroot</span><br><span class="line">@develop = rw                    //develop用户组具有读（r）写(w)权限</span><br><span class="line">@admin = rw</span><br><span class="line">* =                          //其他用户和组没有访问权限</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/03/09/plan/images/1531725835361.jpg" alt="“图片描述”"></p>
+<p><img src="/images/1531725835361.jpg" alt="“图片描述”"></p>
 <p>2.4配置访问方式（此处为https）</p>
 <p>配置apache2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/apache2/mods-available/dav_svn.conf</span></span><br><span class="line">&lt;Location /repos&gt;</span><br><span class="line">   DAV svn</span><br><span class="line">   SVNParentPath /data/svn</span><br><span class="line">   AuthzSVNAccessFile /data/svnauth/authz</span><br><span class="line">   AuthType Basic</span><br><span class="line">   AuthName <span class="string">"Authorization Realm"</span></span><br><span class="line">   AuthUserFile /data/svnauth/passwd</span><br><span class="line">   Require valid-user</span><br><span class="line">   SSLRequireSSL</span><br><span class="line">&lt;/Location&gt;</span><br></pre></td></tr></table></figure></p>
 <p>启用ssl模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a2enmod ssl</span></span><br></pre></td></tr></table></figure></p>
@@ -370,10 +390,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># htpasswd -cm /data/svnauth/passwd testzl      --创建用户：testzl</span></span><br></pre></td></tr></table></figure>
 <p>配置用户权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /data/svnauth/authz           --配置testzl的组和访问svn仓库的权限</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2018/03/09/plan/images/1531726817825.jpg" alt="“图片描述”"></p>
+<p><img src="/images/1531726817825.jpg" alt="“图片描述”"></p>
 <p>3.访问测试</p>
 <p>浏览器输入：<a href="https://IP/repos/devroot" target="_blank" rel="noopener">https://IP/repos/devroot</a></p>
-<p><img src="/2018/03/09/plan/images/1531726675853.jpg" alt="“图片描述”"></p>
+<p><img src="/images/1531726675853.jpg" alt="“图片描述”"></p>
 
       
     </div>
@@ -385,6 +405,24 @@
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    周琳
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhoul.cc/blog/hello-world.html" title="SVN">http://zhoul.cc/blog/hello-world.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -398,13 +436,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/Plan.html" rel="next" title="rabbitmq添加虚拟主机">
+                <i class="fa fa-chevron-left"></i> rabbitmq添加虚拟主机
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/25/now/" rel="prev" title="iptables">
+              <a href="/blog/Untitled.html" rel="prev" title="iptables">
                 iptables <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -468,10 +510,6 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/sun.jpg"
-                alt="周琳" />
-            
               <p class="site-author-name" itemprop="name">周琳</p>
               <p class="site-description motion-element" itemprop="description">我们有梦想，所以很抽象</p>
           </div>
@@ -496,23 +534,14 @@
           </nav>
 
           
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/zhoulhb" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/zhoulin0127" target="_blank" title="微博">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>微博</a>
-                  </span>
-                
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
+          
+
           
 
           
@@ -605,10 +634,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -650,12 +678,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -700,7 +723,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 102244, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 102244, xid: "2018/03/09/plan/"});
+		_hcwp.push({widget:"Stream", widget_id: 102244, xid: "/blog/hello-world.html"});
 		
 
 		(function() {
@@ -732,6 +755,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
